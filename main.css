@@ -1,5 +1,7 @@
 :root {
 	--bunny-layer: rgba(0, 0, 0, 0);
+	--cloud-layer: rgba(0, 0, 0, 0);
+	--green-grass: #268e00;
 }
 
 body {
@@ -101,7 +103,7 @@ input:checked {
 	z-index: 7;
 	height: 120px;
 	width: 160px;
-	background-color: #0ec20e;
+	background-color: var(--cloud-layer);
 	bottom: 0;
 	left: 0;
 	right: 0;
@@ -111,19 +113,19 @@ input:checked {
 	z-index: 8;
 	height: 90px;
 	width: 120px;
-	background-color: white;
+	background-color: var(--cloud-layer);
 	bottom: 0;
 }
 .capa-10 {
 	z-index: 8;
 	height: 90px;
 	width: 120px;
-	background-color: white;
+	background-color: var(--cloud-layer);
 	bottom: 0;
 	right: 0;
 }
 
-/* ear */
+/* bunny */
 .ear {
 	height: 30%;
 	border-radius: 50%;
@@ -166,4 +168,52 @@ input:checked {
 
 .right-eye {
 	right: 30px;
+}
+
+/* cloud */
+.cloud {
+	position: absolute;
+	background-color: white;
+	border-radius: 50px 50px 0 0;
+	width: 60px;
+	height: 45px;
+}
+
+.left-cloud {
+	left: -20px;
+	top: 50px;
+	transform: rotate(-20deg);
+}
+
+.top-cloud {
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	height: 100%;
+	top: 15px;
+}
+
+.right-cloud {
+	right: -15px;
+	top: 50px;
+	transform: rotate(-70deg);
+	border-bottom-right-radius: 50px;
+}
+
+.cloud.green {
+	background-color: var(--green-grass);
+}
+
+.green.left-cloud {
+	left: -5px;
+	top: 60px;
+}
+
+.green.top-cloud {
+	top: 30px;
+}
+
+.green.right-cloud {
+	top: 60px;
+	right: -1px;
 }
