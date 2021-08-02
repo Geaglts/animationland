@@ -2,6 +2,7 @@
 	--bunny-layer: rgba(0, 0, 0, 0);
 	--cloud-layer: rgba(0, 0, 0, 0);
 	--green-grass: #268e00;
+	--dirt-color: #8f6749;
 }
 
 body {
@@ -40,6 +41,7 @@ input:checked {
 .capa {
 	position: absolute;
 	border-radius: 10px 10px 0 0;
+	overflow: hidden;
 }
 
 .capa-1 {
@@ -66,7 +68,7 @@ input:checked {
 	margin: 0 auto;
 	width: 80%;
 	height: 400px;
-	background-color: #0ec20e;
+	background-color: var(--dirt-color);
 }
 .capa-4 {
 	z-index: 3;
@@ -81,7 +83,7 @@ input:checked {
 	bottom: 0;
 	width: 150px;
 	height: 270px;
-	background-color: #0ec20e;
+	background-color: var(--dirt-color);
 }
 .capa-6 {
 	z-index: 5;
@@ -97,7 +99,7 @@ input:checked {
 	right: 0;
 	width: 150px;
 	height: 200px;
-	background-color: #0ec20e;
+	background-color: var(--dirt-color);
 }
 .capa-8 {
 	z-index: 7;
@@ -123,6 +125,36 @@ input:checked {
 	background-color: var(--cloud-layer);
 	bottom: 0;
 	right: 0;
+}
+
+.capa-3::after,
+.capa-5::after,
+.capa-7::after {
+	content: "";
+	position: absolute;
+	left: -0px;
+	top: 0px;
+	width: 100%;
+	height: 40px;
+	background: linear-gradient(135deg, var(--green-grass) 25%, transparent 25%) -50px
+			0,
+		linear-gradient(-135deg, var(--green-grass) 25%, transparent 25%) -50px 0;
+	background-size: 40px 100px;
+}
+
+.capa-3::before,
+.capa-5::before,
+.capa-7::before {
+	content: "";
+	position: absolute;
+	left: -0px;
+	top: 15px;
+	width: 100%;
+	height: 40px;
+	background: linear-gradient(135deg, rgba(0, 0, 0, 0.08) 25%, transparent 25%) -50px
+			0,
+		linear-gradient(-135deg, rgba(0, 0, 0, 0.08) 25%, transparent 25%) -50px 0;
+	background-size: 40px 100px;
 }
 
 /* bunny */
