@@ -19,8 +19,19 @@ body {
 	place-items: center;
 }
 
-.total::after {
-	content: counter(game);
+.phone .title {
+	color: #222;
+	font-size: 22pt;
+	font-family: cursive;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+.phone .score {
+	text-align: center;
+	margin-top: 0;
+	font-weight: bold;
+	font-size: 14pt;
 }
 
 .phone {
@@ -51,10 +62,6 @@ body {
 	height: 80px;
 	z-index: 2;
 	appearance: none;
-}
-
-.capa input[type="checkbox"]:checked {
-	counter-increment: game;
 }
 
 .capa-1 {
@@ -303,4 +310,12 @@ body {
 	100% {
 		bottom: 0;
 	}
+}
+
+.capa input[type="checkbox"]:checked {
+	counter-increment: game;
+}
+
+.phone .score::after {
+	content: counter(game);
 }
