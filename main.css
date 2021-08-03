@@ -5,6 +5,10 @@
 	--dirt-color: #8f6749;
 }
 
+* {
+	outline: none;
+}
+
 body {
 	counter-reset: game;
 	margin: 0;
@@ -13,10 +17,6 @@ body {
 	background-color: ghostwhite;
 	display: grid;
 	place-items: center;
-}
-
-input:checked {
-	counter-increment: game;
 }
 
 .total::after {
@@ -44,6 +44,19 @@ input:checked {
 	overflow: hidden;
 }
 
+.capa input[type="checkbox"] {
+	position: relative;
+	cursor: pointer;
+	width: 100%;
+	height: 80px;
+	z-index: 2;
+	appearance: none;
+}
+
+.capa input[type="checkbox"]:checked {
+	counter-increment: game;
+}
+
 .capa-1 {
 	z-index: 1;
 	height: 450px;
@@ -51,7 +64,9 @@ input:checked {
 	background-color: var(--bunny-layer);
 	bottom: 0;
 	left: 50px;
+	animation-delay: 0.5s;
 }
+
 .capa-2 {
 	z-index: 1;
 	height: 450px;
@@ -59,6 +74,7 @@ input:checked {
 	background-color: var(--bunny-layer);
 	bottom: 0;
 	right: 50px;
+	animation-delay: 0.3s;
 }
 
 .capa-3 {
@@ -78,6 +94,7 @@ input:checked {
 	background-color: var(--bunny-layer);
 	bottom: 0;
 	left: 30px;
+	animation-delay: 0.6s;
 }
 .capa-5 {
 	z-index: 4;
@@ -93,6 +110,7 @@ input:checked {
 	background-color: var(--bunny-layer);
 	bottom: 0;
 	right: 30px;
+	animation-delay: 0.8s;
 }
 .capa-7 {
 	z-index: 6;
@@ -266,4 +284,23 @@ input:checked {
 .green.right-cloud {
 	top: 60px;
 	right: -1px;
+}
+
+.jump {
+	animation-name: jump;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+@keyframes jump {
+	0% {
+		bottom: 0;
+	}
+	25% {
+		bottom: -50px;
+	}
+	100% {
+		bottom: 0;
+	}
 }
