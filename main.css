@@ -64,6 +64,22 @@ body {
 	appearance: none;
 }
 
+.jump {
+	animation: jump 1s ease-in-out infinite;
+}
+
+@keyframes jump {
+	0% {
+		bottom: 0;
+	}
+	25% {
+		bottom: -50px;
+	}
+	100% {
+		bottom: 0;
+	}
+}
+
 .capa-1 {
 	z-index: 1;
 	height: 450px;
@@ -291,25 +307,6 @@ body {
 .green.right-cloud {
 	top: 60px;
 	right: -1px;
-}
-
-.jump {
-	animation-name: jump;
-	animation-duration: 1s;
-	animation-timing-function: ease-in-out;
-	animation-iteration-count: infinite;
-}
-
-@keyframes jump {
-	0% {
-		bottom: 0;
-	}
-	25% {
-		bottom: -50px;
-	}
-	100% {
-		bottom: 0;
-	}
 }
 
 .capa input[type="checkbox"]:checked {
